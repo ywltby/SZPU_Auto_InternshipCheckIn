@@ -77,7 +77,7 @@ class SZPUInternshipCheckIn:
             return
         # 获取登录参数
         logger.debug(f"{self.username}——{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}保存html内容：\n\n\n{html}\n\n\n")
-        if html in 'IP被冻结':
+        if 'IP被冻结' in html:
             logger.error('IP被冻结！')
             return f'<font color="red">{self.username}无法打卡</font>，IP被冻结'
         execution = search('name="execution" value="(.*?)"', html, S).group(1)
