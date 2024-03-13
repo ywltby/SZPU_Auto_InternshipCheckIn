@@ -20,3 +20,5 @@
 5. 本声明并不限制GPL-3.0许可证所赋予您的权利，您仍然可以在GPL-3.0许可证下行使您的权利，只要您遵循许可证的条款。
 
 详细的GPL-3.0许可证内容，请参阅 https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright © 2024 YWLBTWTK.
