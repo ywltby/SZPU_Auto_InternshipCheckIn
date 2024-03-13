@@ -76,8 +76,7 @@ class SZPUInternshipCheckIn:
             logger.error(f'需要图片验证码，请前往登录页面登录后重试！{login_url}')
             return
         # 获取登录参数
-        with open('./logs/html.log', 'a', encoding='utf-8') as f:
-            f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}保存html内容：\n\n\n{html}\n\n\n")
+        logger.debug(f"{self.username}——{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}保存html内容：\n\n\n{html}\n\n\n")
         execution = search('name="execution" value="(.*?)"', html, S).group(1)
         aes_key = search('pwdEncryptSalt" value="(.*?)"/>', html, S).group(1)[:16].encode('utf-8')
         aes_chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
