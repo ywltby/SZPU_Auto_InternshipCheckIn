@@ -212,7 +212,7 @@ def main():
         if return_str is None:
             return_str = f'<font color="red">{username}无法打卡</font>'
         txt += return_str + '\n'
-        time_sleep(range(60, 120))
+        time_sleep(range(300, 500))
     push_plus(txt)
     logger.info('打卡完毕！')
 
@@ -220,6 +220,6 @@ def main():
 if __name__ == '__main__':
     logger.info(f"******定时器，启动！******")
     scheduler = BlockingScheduler()
-    scheduler.add_job(main, 'cron', day_of_week='0-4', hour=8, minute=40)
+    scheduler.add_job(main, 'cron', day_of_week='0-4', hour=7, minute=50)
     scheduler.start()
     logger.info(f"******定时器，关闭！******")
