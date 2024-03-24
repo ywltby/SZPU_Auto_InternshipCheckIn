@@ -222,6 +222,6 @@ def main():
 if __name__ == '__main__':
     logger.info(f"******定时器，启动！******")
     scheduler = BlockingScheduler()
-    scheduler.add_job(main, 'cron', day_of_week='0-4', hour=7, minute=50)
+    scheduler.add_job(main, 'cron', hour=7, minute=50, misfire_grace_time=60)
     scheduler.start()
     logger.info(f"******定时器，关闭！******")
